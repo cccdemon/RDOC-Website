@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "RDOC Display";
+  src: url("/assets/BebasNeue-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --cyan: #00d4ff;
   --gold: #f0a500;
@@ -13,6 +21,7 @@
   --bd-hi: rgba(0, 212, 255, .32);
   --panel: rgba(8, 14, 20, .9);
   --font-ui: "Segoe UI", "Arial Narrow", system-ui, sans-serif;
+  --font-display: "RDOC Display", "Arial Narrow", Impact, sans-serif;
   --font-tech: Consolas, "Cascadia Mono", "Lucida Console", monospace;
 }
 
@@ -30,6 +39,7 @@ body {
   margin: 0;
   color: var(--fg);
   background:
+    url("/assets/rdoc-pulse-overlay.png") no-repeat right 16vh / min(68vw, 980px) auto,
     radial-gradient(900px 520px at 14% -12%, rgba(0, 212, 255, .12), transparent 58%),
     radial-gradient(760px 500px at 100% 8%, rgba(240, 165, 0, .08), transparent 58%),
     linear-gradient(180deg, #04060a 0%, #071019 52%, #04060a 100%);
@@ -151,6 +161,10 @@ a {
   border-right: 1px solid var(--bd);
 }
 
+.drw {
+  display: none;
+}
+
 .hero {
   position: relative;
   overflow: hidden;
@@ -190,9 +204,12 @@ section::before {
 
 h1,
 h2,
-h3,
 .chip,
 .pill {
+  font-family: var(--font-display);
+}
+
+h3 {
   font-family: var(--font-tech);
 }
 
@@ -200,8 +217,8 @@ h1 {
   margin: 12px 0 12px;
   color: var(--cyan);
   font-size: clamp(44px, 8vw, 92px);
-  line-height: .88;
-  letter-spacing: 5px;
+  line-height: .9;
+  letter-spacing: 2px;
   text-transform: uppercase;
   text-shadow: 0 0 28px rgba(0, 212, 255, .26);
 }
@@ -210,7 +227,7 @@ h2 {
   margin: 0 0 14px;
   color: var(--cyan);
   font-size: clamp(20px, 2.7vw, 31px);
-  letter-spacing: 2px;
+  letter-spacing: 1.2px;
   text-transform: uppercase;
 }
 
