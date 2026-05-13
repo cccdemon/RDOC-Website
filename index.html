@@ -100,60 +100,10 @@
     <section id="members">
       <div class="ctr">
         <h2>RDOC Members</h2>
-        <p>Aktuelle öffentliche Mitglieder der RSI Organisation Raumdock / RDOC. Quelle: Roberts Space Industries.</p>
-        <div class="member-grid m20">
-          <a class="streamer-card featured" href="https://robertsspaceindustries.com/citizens/JustCallMeDeimos" target="_blank" rel="noopener">
-            <img src="/assets/streamer-deimos.png" alt="JustCallMeDeimos" loading="lazy">
-            <div class="streamer-meta">
-              <h3>JustCallMeDeimos</h3>
-              <span>Master &middot; Main &middot; Founder</span>
-            </div>
-          </a>
-          <a class="streamer-card featured" href="https://robertsspaceindustries.com/citizens/HEADWiG" target="_blank" rel="noopener">
-            <img src="/assets/streamer-headwig.png" alt="HEADWiG" loading="lazy">
-            <div class="streamer-meta">
-              <h3>HEADWiG</h3>
-              <span>Master &middot; Affiliate</span>
-            </div>
-          </a>
-          <a class="streamer-card featured" href="https://robertsspaceindustries.com/citizens/HolderdiePolder" target="_blank" rel="noopener">
-            <img src="/assets/streamer-holderdiepolder.png" alt="HolderdiePolder" loading="lazy">
-            <div class="streamer-meta">
-              <h3>HolderdiePolder</h3>
-              <span>Master &middot; Affiliate</span>
-            </div>
-          </a>
-          <a class="streamer-card featured" href="https://robertsspaceindustries.com/citizens/jazZz" target="_blank" rel="noopener">
-            <img src="/assets/streamer-jazzz.png" alt="Jazzz" loading="lazy">
-            <div class="streamer-meta">
-              <h3>jazZz</h3>
-              <span>Master &middot; Affiliate</span>
-            </div>
-          </a>
-          <a class="streamer-card featured" href="https://robertsspaceindustries.com/citizens/JerichoRamirez" target="_blank" rel="noopener">
-            <img src="/assets/streamer-jericho.png" alt="Jericho Ramirez" loading="lazy">
-            <div class="streamer-meta">
-              <h3>Jericho Ramirez</h3>
-              <span>Master &middot; Main</span>
-            </div>
-          </a>
-        </div>
-        <div class="member-list m20">
-          <a href="https://robertsspaceindustries.com/citizens/PhantombulletIV" target="_blank" rel="noopener"><span>PhantombulletIV</span><strong>Experienced &middot; Main</strong></a>
-          <a href="https://robertsspaceindustries.com/citizens/Bubb1e" target="_blank" rel="noopener"><span>Bubblegamer <em>Bubb1e</em></span><strong>Experienced &middot; Main</strong></a>
-          <a href="https://robertsspaceindustries.com/citizens/Jejenator" target="_blank" rel="noopener"><span>Jejenator</span><strong>Experienced &middot; Affiliate</strong></a>
-          <a href="https://robertsspaceindustries.com/citizens/moe86" target="_blank" rel="noopener"><span>moe <em>moe86</em></span><strong>Veteran &middot; Affiliate</strong></a>
-          <a href="https://robertsspaceindustries.com/citizens/B4X-H1R" target="_blank" rel="noopener"><span>B4X-H1R</span><strong>Regular &middot; Main</strong></a>
-          <a href="https://robertsspaceindustries.com/citizens/Licronable" target="_blank" rel="noopener"><span>Licronable</span><strong>Experienced &middot; Main</strong></a>
-          <a href="https://robertsspaceindustries.com/citizens/FEDI_Hounddog" target="_blank" rel="noopener"><span>Hounddog <em>FEDI_Hounddog</em></span><strong>Recruit &middot; Affiliate</strong></a>
-          <a href="https://robertsspaceindustries.com/citizens/Listrat" target="_blank" rel="noopener"><span>Listrat</span><strong>Experienced &middot; Main</strong></a>
-          <a href="https://robertsspaceindustries.com/citizens/Wukk" target="_blank" rel="noopener"><span>Wuk <em>Wukk</em></span><strong>Experienced &middot; Affiliate</strong></a>
-          <a href="https://robertsspaceindustries.com/citizens/Donnertron" target="_blank" rel="noopener"><span>Donnertron</span><strong>Experienced &middot; Affiliate</strong></a>
-          <a href="https://robertsspaceindustries.com/citizens/KervyN" target="_blank" rel="noopener"><span>KervyN</span><strong>Regular &middot; Main</strong></a>
-          <a href="https://robertsspaceindustries.com/citizens/casishur" target="_blank" rel="noopener"><span>casishur</span><strong>Veteran &middot; Affiliate</strong></a>
-          <a href="https://robertsspaceindustries.com/citizens/Baalin" target="_blank" rel="noopener"><span>Baalin</span><strong>Expert &middot; Affiliate</strong></a>
-        </div>
-        <p class="member-source">Fetched from the public RSI member page on 13 May 2026: <a href="https://robertsspaceindustries.com/en/orgs/RDOC/members" target="_blank" rel="noopener">RDOC Members</a>.</p>
+        <p>Aktuelle öffentliche Mitglieder der RSI Organisation Raumdock / RDOC. Die Liste wird regelmäßig vom öffentlichen RSI-Profil aktualisiert.</p>
+        <div class="member-grid m20" id="member-featured" aria-live="polite"></div>
+        <div class="member-list m20" id="member-list" aria-live="polite"></div>
+        <p class="member-source" id="member-source">Members werden geladen...</p>
         </div>
     </section>
 
@@ -238,6 +188,7 @@
   </footer>
 
   <script src="/assets/main.js?v=20260513-navfix" defer></script>
+  <script src="/assets/members.js?v=20260513-sync" defer></script>
   <script src="/assets/events.js" defer></script>
 </body>
 </html>
