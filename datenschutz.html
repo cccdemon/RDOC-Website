@@ -8,13 +8,12 @@
   <meta name="theme-color" content="#0a0a0a" />
   <link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png" />
   <style>
-    @import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@400;600;700&display=swap");
-    :root{--cyan:#00d4ff;--gold:#f0a500;--bg:#04060a;--bg2:#080e14;--fg:#c8dce8;--muted:rgba(200,220,232,.58);--bd:rgba(0,212,255,.18)}
+    :root{--cyan:#00d4ff;--gold:#f0a500;--bg:#04060a;--bg2:#080e14;--fg:#c8dce8;--muted:rgba(200,220,232,.58);--bd:rgba(0,212,255,.18);--font-ui:"Segoe UI","Arial Narrow",system-ui,sans-serif;--font-tech:Consolas,"Cascadia Mono","Lucida Console",monospace}
     *{box-sizing:border-box}
-    body{margin:0; font-family:"Rajdhani",system-ui,sans-serif; background:radial-gradient(760px 420px at 12% -10%,rgba(0,212,255,.12),transparent 60%),var(--bg); color:var(--fg)}
+    body{margin:0; font-family:var(--font-ui); background:radial-gradient(760px 420px at 12% -10%,rgba(0,212,255,.12),transparent 60%),var(--bg); color:var(--fg)}
     body::after{content:"";position:fixed;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(0,212,255,.018) 3px,rgba(0,212,255,.018) 4px)}
     .container{max-width:860px; margin:0 auto; padding:32px 20px}
-    h1,h2{font-family:"Share Tech Mono",monospace;text-transform:uppercase;letter-spacing:2px}
+    h1,h2{font-family:var(--font-tech);text-transform:uppercase;letter-spacing:2px}
     h1{font-size:32px;color:var(--cyan)}
     h2{font-size:18px; margin-top:28px;color:var(--cyan)}
     p,li{color:var(--muted); line-height:1.6}
