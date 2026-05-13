@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
   const drw = document.getElementById('drw');
   if (!brg || !drw) return;
   const open = ()=>{
+    drw.hidden = false;
     drw.style.display = 'block';
     requestAnimationFrame(()=> drw.classList.add('open'));
     drw.setAttribute('aria-hidden','false');
@@ -16,7 +17,10 @@ document.addEventListener('DOMContentLoaded', ()=>{
     drw.setAttribute('aria-hidden','true');
     brg.setAttribute('aria-expanded','false');
     document.body.classList.remove('no-scroll');
-    setTimeout(()=>{ drw.style.display='none'; }, 250);
+    setTimeout(()=>{
+      drw.style.display='none';
+      drw.hidden = true;
+    }, 250);
   };
   const toggle = ()=> drw.classList.contains('open') ? close() : open();
   brg.addEventListener('click', toggle);
