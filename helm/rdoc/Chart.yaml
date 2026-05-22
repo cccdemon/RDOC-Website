@@ -1,0 +1,9 @@
+apiVersion: v2
+name: rdoc
+description: Raumdock website – split into web (HTML), assets (static), api (PHP) containers.
+type: application
+version: 0.1.0
+appVersion: "1.0.0"
+maintainers:
+  - name: Raumdock
+    url: https://raumdock.org

@@ -1,0 +1,23 @@
+# VCS & Editor
+.git
+.gitignore
+.vscode
+.idea
+
+# Docs / planning / Altlasten
+*.md
+plan.md
+index.html-old
+pictures/
+public/
+
+# Build / Compose artefakte
+docker-compose.yml
+docker/
+k8s/
+
+# Secrets dürfen NIE ins Image
+**/.env
+**/.env.*
+**/*.pem
+**/*.key

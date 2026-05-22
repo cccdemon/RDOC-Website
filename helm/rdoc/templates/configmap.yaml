@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "rdoc.configMapName" . }}
+  labels:
+    {{- include "rdoc.labels" . | nindent 4 }}
+data:
+  ALLOWED_ORIGIN: {{ .Values.allowedOrigin | quote }}

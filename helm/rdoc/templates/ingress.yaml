@@ -1,0 +1,51 @@
+{{- if .Values.ingress.enabled }}
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ include "rdoc.fullname" . }}
+  labels:
+    {{- include "rdoc.labels" . | nindent 4 }}
+  {{- with .Values.ingress.annotations }}
+  annotations:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+spec:
+  ingressClassName: {{ .Values.ingress.className }}
+  {{- if .Values.ingress.tls.enabled }}
+  tls:
+    - hosts:
+        - {{ .Values.ingress.host | quote }}
+      secretName: {{ .Values.ingress.tls.secretName }}
+  {{- end }}
+  rules:
+    - host: {{ .Values.ingress.host | quote }}
+      http:
+        paths:
+          {{- if .Values.api.enabled }}
+          - path: {{ .Values.ingress.paths.api }}
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ include "rdoc.componentName" (dict "root" . "component" "api") }}
+                port:
+                  number: {{ .Values.api.service.port }}
+          {{- end }}
+          {{- if .Values.assets.enabled }}
+          - path: {{ .Values.ingress.paths.assets }}
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ include "rdoc.componentName" (dict "root" . "component" "assets") }}
+                port:
+                  number: {{ .Values.assets.service.port }}
+          {{- end }}
+          {{- if .Values.web.enabled }}
+          - path: {{ .Values.ingress.paths.web }}
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ include "rdoc.componentName" (dict "root" . "component" "web") }}
+                port:
+                  number: {{ .Values.web.service.port }}
+          {{- end }}
+{{- end }}

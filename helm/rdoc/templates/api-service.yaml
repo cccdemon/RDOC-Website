@@ -1,0 +1,17 @@
+{{- if .Values.api.enabled }}
+{{- $component := "api" -}}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "rdoc.componentName" (dict "root" . "component" $component) }}
+  labels:
+    {{- include "rdoc.componentLabels" (dict "root" . "component" $component) | nindent 4 }}
+spec:
+  type: ClusterIP
+  selector:
+    {{- include "rdoc.componentSelectorLabels" (dict "root" . "component" $component) | nindent 4 }}
+  ports:
+    - name: http
+      port: {{ .Values.api.service.port }}
+      targetPort: http
+{{- end }}

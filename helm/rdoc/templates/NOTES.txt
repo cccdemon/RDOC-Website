@@ -1,0 +1,41 @@
+Raumdock website wurde mit Release "{{ .Release.Name }}" in Namespace "{{ .Release.Namespace }}" deployt.
+
+Komponenten:
+{{- if .Values.web.enabled }}
+  - web    -> {{ include "rdoc.componentName" (dict "root" . "component" "web") }}
+{{- end }}
+{{- if .Values.assets.enabled }}
+  - assets -> {{ include "rdoc.componentName" (dict "root" . "component" "assets") }}
+{{- end }}
+{{- if .Values.api.enabled }}
+  - api    -> {{ include "rdoc.componentName" (dict "root" . "component" "api") }}
+{{- end }}
+
+{{- if .Values.ingress.enabled }}
+
+Ingress: {{ if .Values.ingress.tls.enabled }}https{{ else }}http{{ end }}://{{ .Values.ingress.host }}
+  {{ .Values.ingress.paths.api }}    -> api
+  {{ .Values.ingress.paths.assets }} -> assets
+  {{ .Values.ingress.paths.web }}    -> web (catch-all)
+{{- end }}
+
+{{- if and .Values.secrets.create (not .Values.secrets.existingSecret) }}
+
+Secret "{{ include "rdoc.secretName" . }}" wurde aus values.yaml erzeugt.
+Wenn du die API-Tokens noch nicht gesetzt hast:
+
+  kubectl -n {{ .Release.Namespace }} create secret generic {{ include "rdoc.secretName" . }} \
+    --from-literal=TWITCH_CLIENT_ID=... \
+    --from-literal=TWITCH_CLIENT_SECRET=... \
+    --from-literal=DISCORD_BOT_TOKEN=... \
+    --from-literal=DISCORD_GUILD_ID=... \
+    --dry-run=client -o yaml | kubectl apply -f -
+
+Nach dem Update die API neu rollen:
+
+  kubectl -n {{ .Release.Namespace }} rollout restart deployment/{{ include "rdoc.componentName" (dict "root" . "component" "api") }}
+{{- end }}
+
+Health-Check pro Service:
+  kubectl -n {{ .Release.Namespace }} run -it --rm curl --image=curlimages/curl --restart=Never -- \
+    curl -s http://{{ include "rdoc.componentName" (dict "root" . "component" "web") }}/healthz

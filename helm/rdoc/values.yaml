@@ -1,0 +1,122 @@
+# Defaults für den Raumdock-Stack. Per `helm install -f my-values.yaml` oder `--set` überschreiben.
+
+nameOverride: ""
+fullnameOverride: ""
+
+image:
+  # Komponenten-Repos hängen unter diesem Pfad: <registry>/<component.image.repository>:<tag>
+  registry: ghcr.io/YOUR_ORG
+  tag: latest
+  pullPolicy: IfNotPresent
+  # Optional: Liste von imagePullSecrets-Namen (für private Registries)
+  pullSecrets: []
+
+# Wird per ConfigMap an die API gemountet (envFrom)
+allowedOrigin: "https://raumdock.org"
+
+# API-Secrets. Entweder hier setzen (create=true) oder ein extern verwaltetes Secret referenzieren.
+secrets:
+  create: true
+  existingSecret: ""    # Wenn gesetzt, wird kein Secret erzeugt und stattdessen dieser Name gemountet
+  data:
+    twitchClientId: ""
+    twitchClientSecret: ""
+    discordBotToken: ""
+    discordGuildId: ""
+
+# -------------------- web (HTML) --------------------
+web:
+  enabled: true
+  replicaCount: 2
+  image:
+    repository: rdoc-web
+    tag: ""             # Wenn leer: image.tag aus dem globalen Block
+  service:
+    port: 80
+  resources:
+    requests: { cpu: "10m", memory: "16Mi" }
+    limits:   { cpu: "100m", memory: "64Mi" }
+  podSecurityContext:
+    runAsNonRoot: true
+    runAsUser: 101
+    runAsGroup: 101
+    seccompProfile:
+      type: RuntimeDefault
+  containerSecurityContext:
+    allowPrivilegeEscalation: false
+    readOnlyRootFilesystem: false
+    capabilities:
+      drop: ["ALL"]
+  nodeSelector: {}
+  tolerations: []
+  affinity: {}
+
+# -------------------- assets (CSS/JS/Bilder) --------------------
+assets:
+  enabled: true
+  replicaCount: 2
+  image:
+    repository: rdoc-assets
+    tag: ""
+  service:
+    port: 80
+  resources:
+    requests: { cpu: "10m", memory: "16Mi" }
+    limits:   { cpu: "200m", memory: "96Mi" }
+  podSecurityContext:
+    runAsNonRoot: true
+    runAsUser: 101
+    runAsGroup: 101
+    seccompProfile:
+      type: RuntimeDefault
+  containerSecurityContext:
+    allowPrivilegeEscalation: false
+    readOnlyRootFilesystem: false
+    capabilities:
+      drop: ["ALL"]
+  nodeSelector: {}
+  tolerations: []
+  affinity: {}
+
+# -------------------- api (PHP / Apache) --------------------
+api:
+  enabled: true
+  replicaCount: 2
+  image:
+    repository: rdoc-api
+    tag: ""
+  service:
+    port: 80
+  resources:
+    requests: { cpu: "20m", memory: "64Mi" }
+    limits:   { cpu: "500m", memory: "256Mi" }
+  podSecurityContext:
+    runAsNonRoot: true
+    runAsUser: 33       # www-data im offiziellen php:apache-Image
+    runAsGroup: 33
+    seccompProfile:
+      type: RuntimeDefault
+  containerSecurityContext:
+    allowPrivilegeEscalation: false
+    readOnlyRootFilesystem: false   # Apache schreibt Logs / PID
+    capabilities:
+      drop: ["ALL"]
+  nodeSelector: {}
+  tolerations: []
+  affinity: {}
+
+# -------------------- ingress --------------------
+ingress:
+  enabled: true
+  className: nginx
+  annotations:
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    # cert-manager.io/cluster-issuer: letsencrypt-prod
+  host: raumdock.org
+  tls:
+    enabled: true
+    secretName: raumdock-tls
+  paths:
+    api: /api
+    assets: /assets
+    web: /
