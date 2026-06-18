@@ -213,7 +213,7 @@ a {
   background:
     linear-gradient(90deg, rgba(4, 6, 10, .94) 0%, rgba(4, 6, 10, .78) 44%, rgba(4, 6, 10, .38) 100%),
     radial-gradient(500px 260px at 70% 40%, rgba(0, 212, 255, .13), transparent 72%),
-    url("/assets/wolf.png") no-repeat right center / min(48vw, 620px);
+    url("/assets/rdoc-2026-flagships-paladin-perseus-hero-v5.png") no-repeat right center / cover;
 }
 
 .hero::before,
@@ -334,6 +334,26 @@ section {
   border-left: 2px solid rgba(0, 212, 255, .45);
   background: linear-gradient(135deg, rgba(8, 14, 20, .96), rgba(12, 21, 32, .82));
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, .02);
+}
+
+.brand-art {
+  position: relative;
+  overflow: hidden;
+  min-height: 430px;
+  margin: 0 0 12px;
+  border: 1px solid rgba(0, 212, 255, .18);
+  border-left: 2px solid rgba(240, 165, 0, .44);
+  background: rgba(8, 14, 20, .82);
+}
+
+.brand-art img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 430px;
+  object-fit: cover;
+  object-position: center top;
+  filter: saturate(.96) contrast(1.04);
 }
 
 .cd::before,
@@ -552,6 +572,52 @@ section {
   box-shadow: 0 0 28px rgba(0, 212, 255, .12);
 }
 
+.suite-wrap {
+  align-items: center;
+}
+
+.suite-cards {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.suite-art {
+  position: relative;
+  min-height: 520px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 212, 255, .2);
+  border-left: 2px solid rgba(240, 165, 0, .5);
+  background:
+    radial-gradient(460px 360px at 50% 42%, rgba(0, 212, 255, .16), transparent 70%),
+    linear-gradient(135deg, rgba(8, 14, 20, .94), rgba(4, 6, 10, .98));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .03), 0 0 34px rgba(0, 212, 255, .08);
+}
+
+.suite-art::before {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  z-index: 2;
+  pointer-events: none;
+  border: 1px solid rgba(0, 212, 255, .12);
+  background:
+    linear-gradient(90deg, rgba(0, 212, 255, .18), transparent 32%, transparent 68%, rgba(240, 165, 0, .16)),
+    repeating-linear-gradient(0deg, transparent, transparent 7px, rgba(0, 212, 255, .025) 8px);
+  mask: linear-gradient(#000, transparent 72%);
+}
+
+.suite-art img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(.95) contrast(1.05);
+}
+
+.suite-events-title {
+  margin-top: 22px;
+}
+
 .ftr {
   padding: 22px 0 46px;
   color: var(--dim);
@@ -618,7 +684,7 @@ section {
     padding: 86px 0 62px;
     background:
       linear-gradient(180deg, rgba(4, 6, 10, .82) 0%, rgba(4, 6, 10, .94) 72%),
-      url("/assets/wolf.png") no-repeat center bottom / min(120vw, 620px);
+      url("/assets/rdoc-2026-flagships-paladin-perseus-hero-v5.png") no-repeat center bottom / auto 100%;
   }
 
   .mn {
@@ -681,6 +747,14 @@ section {
   .mn-m a[href^="https://financial"] {
     color: var(--gold);
     border-color: rgba(240, 165, 0, .24);
+  }
+
+  .suite-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .suite-art {
+    min-height: 420px;
   }
 
   .no-scroll {

@@ -5,7 +5,7 @@ LABEL org.opencontainers.image.title="rdoc-web" \
       org.opencontainers.image.source="https://raumdock.org"
 
 COPY docker/web/nginx.conf /etc/nginx/conf.d/default.conf
-COPY index.html datenschutz.html 404.html site.webmanifest /usr/share/nginx/html/
+COPY index.html ops-log.html datenschutz.html 404.html site.webmanifest robots.txt sitemap.xml /usr/share/nginx/html/
 
 EXPOSE 8080
 

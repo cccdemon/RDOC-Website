@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="de" data-hero="flagship" data-accent="cyan">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RDOC Ops-Log — After-Action Reports | Raumdock</title>
+  <meta name="description" content="Das RDOC Ops-Log: After-Action Reports der Raumdock-Crew. Was wir tatsächlich geflogen haben — mit Ergebnis, Verlauf und Lessons Learned." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <link rel="canonical" href="https://raumdock.org/ops-log.html" />
+  <meta name="theme-color" content="#04060a" />
+  <meta property="og:site_name" content="Raumdock" />
+  <meta property="og:title" content="RDOC Ops-Log — After-Action Reports" />
+  <meta property="og:description" content="After-Action Reports der RDOC-Crew: Ergebnis, Verlauf und Lessons Learned echter Star-Citizen-Operationen." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://raumdock.org/ops-log.html" />
+  <meta property="og:image" content="https://raumdock.org/assets/rdoc-2026-og-suite-banner.png" />
+  <meta property="og:locale" content="de_DE" />
+  <link rel="icon" href="/assets/favicon-512.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/rdoc2.css?v=20260609-quotes" />
+  <style>
+    /* ---- Ops-Log page-specific ---- */
+    .log-hero {
+      position: relative; overflow: hidden;
+      min-height: clamp(380px, 56vh, 560px);
+      display: flex; align-items: flex-end;
+      border-bottom: 1px solid var(--bd);
+    }
+    .log-hero .bg { position: absolute; inset: 0; z-index: 0; background: url('/assets/mission-combat.png') center/cover; filter: saturate(.96) contrast(1.06); }
+    .log-hero .scrim { position: absolute; inset: 0; z-index: 1; background: linear-gradient(90deg, rgba(4,6,10,.96) 0%, rgba(4,6,10,.74) 46%, rgba(4,6,10,.4) 100%), linear-gradient(0deg, rgba(4,6,10,.98), transparent 56%); }
+    .log-hero .inner { position: relative; z-index: 2; padding: 88px 0 40px; width: 100%; }
+    .log-hero h1 { margin: 14px 0 10px; color: var(--hi); font-family: var(--font-display); font-size: clamp(56px, 10vw, 132px); line-height: .82; letter-spacing: 2px; text-transform: uppercase; text-shadow: 0 0 40px rgba(var(--accent-rgb), .3); }
+    .log-hero h1 em { font-style: normal; color: var(--accent); }
+    .log-motto { font-family: var(--font-display); font-size: clamp(22px, 3vw, 34px); letter-spacing: 1px; text-transform: uppercase; color: var(--gold); margin: 0; }
+    .back { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 1.6px; text-transform: uppercase; color: var(--accent); }
+    .back:hover { color: var(--hi); }
+
+    /* filter bar */
+    .filter { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 0 0 30px; }
+    .filter .fl-lbl { font-family: var(--font-mono); font-size: 10px; letter-spacing: 1.6px; text-transform: uppercase; color: var(--dim); margin-right: 6px; }
+    .fchip {
+      font-family: var(--font-mono); font-size: 11px; letter-spacing: 1.2px; text-transform: uppercase;
+      color: var(--muted); border: 1px solid var(--bd); padding: 7px 13px; background: rgba(8,14,20,.6); cursor: pointer;
+      transition: color .14s, border-color .14s, background .14s;
+    }
+    .fchip:hover { color: var(--hi); border-color: var(--bd-hi); }
+    .fchip.on { color: var(--accent); border-color: var(--accent); background: rgba(var(--accent-rgb), .08); }
+
+    /* report card */
+    .report {
+      display: grid; grid-template-columns: 380px 1fr; gap: 0;
+      border: 1px solid var(--bd); background: var(--bg2); margin-bottom: 16px;
+      transition: border-color .15s;
+    }
+    .report:hover { border-color: var(--bd-hi); }
+    .report .vis { position: relative; overflow: hidden; min-height: 280px; background: #0a121b; }
+    .report .vis img { width: 100%; height: 100%; min-height: 280px; object-fit: cover; filter: saturate(.93) contrast(1.05); }
+    .report .vis .otag { position: absolute; top: 12px; left: 12px; font-family: var(--font-mono); font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); border: 1px solid var(--bd-hi); padding: 4px 8px; background: rgba(4,6,10,.72); }
+    .report .vis .opid { position: absolute; bottom: 12px; left: 12px; font-family: var(--font-mono); font-size: 10px; letter-spacing: 1.2px; color: var(--dim); }
+    .report .rb { padding: 26px 28px; display: flex; flex-direction: column; }
+    .report .rmeta { display: flex; flex-wrap: wrap; gap: 16px; font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 1.3px; text-transform: uppercase; color: var(--dim); margin-bottom: 12px; }
+    .report .rmeta span { white-space: nowrap; }
+    .report .rmeta .ok { color: var(--green); }
+    .report .rmeta .part { color: var(--gold); }
+    .report .rmeta .abort { color: var(--red); }
+    .report h2 { margin: 0 0 12px; color: var(--hi); font-family: var(--font-display); font-size: clamp(30px, 3.4vw, 42px); line-height: .96; letter-spacing: .8px; text-transform: uppercase; }
+    .report h2 em { font-style: normal; color: var(--accent); }
+    .report p { margin: 0 0 12px; color: var(--muted); font-size: 16px; }
+    .report .lessons {
+      margin-top: auto; padding: 14px 16px; border: 1px solid var(--bd-gold); border-left: 3px solid var(--gold);
+      background: rgba(240,165,0,.05);
+    }
+    .report .lessons .lh { font-family: var(--font-mono); font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 7px; }
+    .report .lessons ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 6px; }
+    .report .lessons li { position: relative; padding-left: 18px; font-size: 14.5px; color: rgba(240,165,0,.92); font-family: var(--font-mono); letter-spacing: .2px; line-height: 1.4; }
+    .report .lessons li::before { content: "→"; position: absolute; left: 0; color: var(--gold); }
+    .report.hide { display: none; }
+    .ops-empty { padding: 26px; border: 1px solid var(--bd); border-left: 2px solid var(--bd-gold); background: rgba(8,14,20,.6); color: var(--muted); font-family: var(--font-mono); font-size: 13px; letter-spacing: .4px; }
+
+    @media (max-width: 820px) {
+      .report { grid-template-columns: 1fr; }
+      .report .vis img { min-height: 200px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="scroll-prog" id="scroll-prog" aria-hidden="true"></div>
+
+  <header class="hd">
+    <div class="ctr-wide">
+      <nav class="nv" aria-label="Hauptmenü">
+        <a class="br" href="index.html">
+          <span class="lg" aria-hidden="true"></span>
+          <span class="wd">Raumdock</span>
+          <span class="tag">RDOC</span>
+        </a>
+        <div class="mn">
+          <a href="index.html#wir-sind">Wir sind</a>
+          <a href="index.html#kodex">Kodex</a>
+          <a href="index.html#crew">Crew</a>
+          <a href="index.html#einstieg">Einstieg</a>
+          <a href="index.html#tradition">Tradition</a>
+          <a href="ops-log.html" class="active">Ops-Log</a>
+          <a href="index.html#zitate">Zitate</a>
+          <a href="index.html#brandkit">Brand-Kit</a>
+          <a href="index.html#suite">Suite</a>
+          <a href="index.html#members">Members</a>
+          <a href="index.html#twitch">Twitch</a>
+          <a class="ext" href="https://financial.raumdock.org/" target="_blank" rel="noopener">Financial ↗</a>
+        </div>
+        <a class="brg" href="index.html">← Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="log-hero">
+      <div class="bg" aria-hidden="true"></div>
+      <div class="scrim" aria-hidden="true"></div>
+      <div class="hero-frame" aria-hidden="true"></div>
+      <div class="inner">
+        <div class="ctr-wide">
+          <a class="back" href="index.html">← Zurück zu Raumdock</a>
+          <h1>Ops-<em>Log</em></h1>
+          <p class="log-motto">„Nicht reden, sondern machen.&ldquo;</p>
+          <p class="lead" style="max-width:680px;margin-top:14px">After-Action Reports der RDOC-Crew. Kein Marketing — was tatsächlich geflogen wurde, wie es lief und was wir daraus mitnehmen.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec" style="padding-top:64px">
+      <div class="ctr-wide">
+        <div class="filter" id="filter" hidden>
+          <span class="fl-lbl">// Filter</span>
+          <button class="fchip on" data-f="all">Alle</button>
+          <button class="fchip" data-f="salvage">Salvage</button>
+          <button class="fchip" data-f="combat">Combat</button>
+          <button class="fchip" data-f="transport">Transport</button>
+          <button class="fchip" data-f="mining">Mining</button>
+          <button class="fchip" data-f="recon">Recon</button>
+          <button class="fchip" data-f="social">Social</button>
+        </div>
+
+        <div id="reports" aria-live="polite">
+          <div class="ops-empty">// Abgeschlossene Operationen werden aus dem Fleetmanager geladen…</div>
+        </div>
+
+        <div class="card gold m28" style="text-align:center">
+          <h3>Dein Op gehört hier rein.</h3>
+          <p style="max-width:620px;margin:0 auto">Jeder gut geschriebene Bericht wirbt noch in zwei Jahren. Schreib deinen AAR im Discord — wir nehmen ihn ins Log auf.</p>
+          <div class="cta-row" style="justify-content:center;margin-top:16px">
+            <a class="btn btn-primary" href="https://discord.gg/raumdock" target="_blank" rel="noopener"><span class="ic">▶</span> AAR einreichen</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="ftr">
+    <div class="ctr-wide ftr-i">
+      <div>© <span id="year">2026</span> Raumdock — Star Citizen Orga</div>
+      <div class="muted">Gebaut von Piloten, für Piloten.</div>
+      <div class="o7">Chaos is a plan // o7</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  <script src="/assets/main.js?v=20260609-quotes" defer></script>
+  <!-- Live ops-log from the Fleetmanager (concluded ops). Honest empty state if the feed is empty/unreachable. -->
+  <script src="/assets/ops-log.js?v=20260609-quotes" defer></script>
+</body>
+</html>

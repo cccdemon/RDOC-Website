@@ -1,6 +1,7 @@
 {
-  "name": "Raumdock",
+  "name": "Raumdock – Deutsche Star Citizen Orga",
   "short_name": "Raumdock",
+  "description": "Raumdock (RDOC) ist eine deutschsprachige Star Citizen Orga und Community.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#08090c",

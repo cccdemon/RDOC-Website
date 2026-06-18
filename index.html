@@ -1,339 +1,539 @@
 <!doctype html>
-<html lang="de">
+<html lang="de" data-hero="flagship" data-accent="cyan">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Raumdock – Deutschsprachige Star Citizen Orga</title>
-  <meta name="description" content="Raumdock – deutschsprachige, einsteigerfreundliche Star Citizen Orga. Gemeinsam fliegen, voneinander lernen, Eventabende ohne Pflicht. Komm auf unseren Discord." />
-  <meta property="og:title" content="Raumdock – Deutschsprachige Star Citizen Orga" />
-  <meta property="og:description" content="Deutschsprachige, einsteigerfreundliche Star Citizen Orga. Gemeinsam fliegen, voneinander lernen, Eventabende ohne Pflicht." />
+  <title>Raumdock (RDOC) – Deutsche Star Citizen Orga & Community</title>
+  <meta name="description" content="Raumdock (RDOC) ist eine deutsche Star Citizen Orga mit Anvil Paladin und RSI Perseus als Flagschiffen: Crewplay, feste Einsatzabende, keine Bewerbung, Discord, RSI-Orga und Twitch mit JustCallMeDeimos." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta name="author" content="Raumdock RDOC" />
+  <meta name="keywords" content="Star Citizen Orga Deutsch, deutsche Star Citizen Orga, Anvil Paladin, RSI Perseus, Star Citizen Paladin, Star Citizen Perseus, deutschsprachige Star Citizen Community, Raumdock, RDOC, JustCallMeDeimos, JerichoRamirez, HEADWiG, jazZz, HolderdiePolder" />
+  <link rel="canonical" href="https://raumdock.org/" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta property="og:site_name" content="Raumdock" />
+  <meta property="og:title" content="Raumdock (RDOC) – Deutsche Star Citizen Orga" />
+  <meta property="og:description" content="Deutschsprachige Star Citizen Orga für Einsteiger und Veteranen. Gemeinsam fliegen, Events planen, Discord nutzen und RDOC auf RSI finden." />
   <meta property="og:type" content="website" />
-  <meta name="theme-color" content="#0a0a0a" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg fill='none' stroke='black' stroke-width='0'%3E%3Ccircle cx='50' cy='50' r='48' fill='%230a0a0a'/%3E%3Cpath d='M22 62 q28 14 56 0 l-6-22 q-24-10-44 0 z' fill='%23444'/%3E%3Cellipse cx='50' cy='46' rx='26' ry='18' fill='%23f6c200'/%3E%3Cellipse cx='62' cy='40' rx='8' ry='5' fill='%23fff7'/%3E%3C/g%3E%3C/svg%3E" />
-  <link rel="stylesheet" href="/assets/styles.css?v=20260513-rsi-members" />
+  <meta property="og:url" content="https://raumdock.org/" />
+  <meta property="og:image" content="https://raumdock.org/assets/rdoc-2026-og-suite-banner.png" />
+  <meta property="og:image:alt" content="Raumdock RDOC – deutsche Star Citizen Orga" />
+  <meta property="og:locale" content="de_DE" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Raumdock (RDOC) – Deutsche Star Citizen Orga" />
+  <meta name="twitter:description" content="Deutschsprachige Star Citizen Orga mit Discord, Events, RSI-Profil und Twitch-Streams von JustCallMeDeimos." />
+  <meta name="twitter:image" content="https://raumdock.org/assets/rdoc-2026-og-suite-banner.png" />
+  <meta name="theme-color" content="#04060a" />
+  <link rel="icon" href="/assets/favicon-512.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/rdoc3.css?v=20260617-hero" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://raumdock.org/#organization",
+        "name": "Raumdock",
+        "alternateName": ["RDOC", "Raumdock Star Citizen Orga"],
+        "url": "https://raumdock.org/",
+        "logo": "https://raumdock.org/assets/favicon-512.png",
+        "image": "https://raumdock.org/assets/rdoc-2026-og-suite-banner.png",
+        "description": "Raumdock (RDOC) ist eine deutsche, deutschsprachige Star Citizen Orga und Community mit Anvil Paladin und RSI Perseus als Flagschiffen, Discord, Events, RSI-Orga-Profil und Twitch-Streams.",
+        "knowsAbout": ["Star Citizen", "Anvil Paladin", "RSI Perseus", "deutsche Star Citizen Orga", "Discord Community", "Fleetplanner"],
+        "email": "tower@raumdock.org",
+        "sameAs": [
+          "https://robertsspaceindustries.com/orgs/RDOC",
+          "https://suite.raumdock.org/fleetplanner",
+          "https://twitch.tv/JustCallMeDeimos",
+          "https://github.com/cccdemon"
+        ],
+        "member": [
+          { "@type": "Person", "name": "JustCallMeDeimos", "url": "https://robertsspaceindustries.com/citizens/JustCallMeDeimos", "sameAs": "https://twitch.tv/JustCallMeDeimos" },
+          { "@type": "Person", "name": "JerichoRamirez", "url": "https://robertsspaceindustries.com/citizens/JerichoRamirez" },
+          { "@type": "Person", "name": "HEADWiG", "url": "https://robertsspaceindustries.com/citizens/HEADWiG" },
+          { "@type": "Person", "name": "jazZz", "url": "https://robertsspaceindustries.com/citizens/jazZz" },
+          { "@type": "Person", "name": "HolderdiePolder", "url": "https://robertsspaceindustries.com/citizens/HolderdiePolder" }
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://raumdock.org/#website",
+        "url": "https://raumdock.org/",
+        "name": "Raumdock",
+        "inLanguage": "de-DE",
+        "publisher": { "@id": "https://raumdock.org/#organization" },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://www.google.com/search?q=site%3Araumdock.org+{search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://raumdock.org/#faq-schema",
+        "inLanguage": "de-DE",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Ist Raumdock eine deutsche Star Citizen Orga?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Ja. Raumdock (RDOC) ist eine deutschsprachige Star Citizen Orga und Community mit Discord, RSI-Orga-Profil und gemeinsamen Events." }
+          },
+          {
+            "@type": "Question",
+            "name": "Kann ich als Einsteiger bei Raumdock mitmachen?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Ja. Raumdock ist einsteigerfreundlich. Ein Starter-Schiff reicht, erfahrene Mitglieder helfen bei den ersten Schritten im Verse." }
+          },
+          {
+            "@type": "Question",
+            "name": "Wo finde ich JustCallMeDeimos auf Twitch?",
+            "acceptedAnswer": { "@type": "Answer", "text": "JustCallMeDeimos streamt auf Twitch unter https://twitch.tv/JustCallMeDeimos und ist Teil von Raumdock." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
-  <header class="hd">
-    <div class="ctr">
-      <nav class="nv">
-        <div class="br">
-          <span class="lg" aria-hidden="true"></span><span>Raumdock</span>
-          <a id="twitch-live" class="live-badge" href="https://twitch.tv/JustCallMeDeimos" target="_blank" rel="noopener" hidden aria-label="JustCallMeDeimos ist live auf Twitch">
-            <span class="live-dot" aria-hidden="true"></span><span>LIVE</span>
-          </a>
-        </div>
-        <div class="mn" aria-label="Hauptmenü">
-          <a href="#willkommen">Willkommen</a>
-          <a href="#wir-sind">Wir sind</a>
-          <a href="#events">Events</a>
-          <a href="#mitmachen">Mitmachen</a>
-          <a href="#members">Members</a>
-          <a href="#links">Links</a>
-          <a href="#tools">Tools</a>
-          <a href="#lrc">LRC</a>
-          <a href="#twitch">Twitch</a>
-          <a href="#faq">FAQ</a>
-          <a href="https://financial.raumdock.org/" target="_blank" rel="noopener">Financial</a>
-          <a href="#impressum" class="cta">Impressum</a>
-        </div>
-        <button class="brg" id="brg" aria-label="Menü öffnen" aria-expanded="false">☰ Menü</button>
-      </nav>
-    </div>
-  </header>
 
-
-  <div class="drw" id="drw" aria-hidden="true" hidden>
-    <div class="ctr pnl">
-      <nav class="mn-m">
-        <a href="#willkommen">Willkommen</a>
-        <a href="#wir-sind">Wir sind</a>
-        <a href="#events">Events</a>
-        <a href="#mitmachen">Mitmachen</a>
-        <a href="#members">Members</a>
-        <a href="#links">Links</a>
-        <a href="#tools">Tools</a>
-        <a href="#lrc">LRC</a>
-        <a href="#twitch">Twitch</a>
-        <a href="#faq">FAQ</a>
-        <a href="https://financial.raumdock.org/" target="_blank" rel="noopener">Financial</a>
-        <a href="#impressum">Impressum</a>
-      </nav>
-    </div>
+<!-- ════════════ NAV ════════════ -->
+<header class="nav">
+  <div class="ctr-wide nav-i">
+    <a class="brand" href="#top" aria-label="Raumdock Startseite">
+      <img src="assets/wolf.png" alt="" />
+      <span class="wm">RAUM<b>DOCK</b></span>
+      <span class="tg">RDOC</span>
+      <span class="live" id="live"><span class="d"></span>LIVE</span>
+    </a>
+    <nav class="nav-links" aria-label="Hauptmenü">
+      <a href="#wir">Wir sind</a>
+      <a href="#einsatz">Einsatzfelder</a>
+      <a href="#crew">Crew</a>
+      <a href="#einstieg">Einstieg</a>
+      <a href="ops-log.html">Ops-Log</a>
+      <a href="#tradition">Tradition</a>
+      <a href="#twitch">Twitch</a>
+      <a href="#suite">Suite</a>
+      <a href="#faq">FAQ</a>
+      <a class="ext" href="https://financial.raumdock.org/" target="_blank" rel="noopener">Financial ↗</a>
+    </nav>
+    <a class="btn-disc" href="https://discord.gg/raumdock" target="_blank" rel="noopener">▶ Discord</a>
+    <button class="burger" id="burger" aria-label="Menü öffnen" aria-expanded="false">☰ Menü</button>
   </div>
+</header>
 
-  <main>
-    <section id="willkommen" class="hero">
-      <div class="ctr g">
-        <div>
-          <span class="chip">Deutschsprachig · Einsteigerfreundlich · Star Citizen</span>
-          <h1>Raumdock</h1>
-          <h2 class="v-head">Unsere Vision</h2>
-          <p class="lead">Eine Orga ist nur so gut wie die Leute, die mitfliegen. Wir wollen gemeinsam spielen, voneinander lernen und an etwas bauen, das größer ist als die einzelne Mission. Uns ist <em>Zuverlässigkeit und Verbindlichkeit</em> wichtig – ohne dass daraus eine Pflicht wird. Du gestaltest mit, vom ersten Tag an.</p>
-          <div class="cds">
-            <div class="cd"><h3>🔭 Fokus</h3><p>Gemeinsame PvE‑Touren, Event‑Abende und ein offenes Ohr für alle, die neu im Verse sind.</p></div>
-            <div class="cd"><h3>🛰️ Spielstil</h3><p>Von entspannt bis organisiert – real life kommt zuerst. Pflichttermine gibt es bei uns nicht.</p></div>
-            <div class="cd"><h3>💬 Community</h3><p>Discord ist unsere Heimatbasis – Voice‑Kanäle, Terminplanung, kurze Wege.</p></div>
-          </div>
+<div class="drawer" id="drawer" aria-hidden="true">
+  <div class="pnl">
+    <button class="x" id="drawerX" aria-label="Menü schließen">✕</button>
+    <a href="#wir">Wir sind</a>
+    <a href="#einsatz">Einsatzfelder</a>
+    <a href="#crew">Crew</a>
+    <a href="#einstieg">Einstieg</a>
+    <a href="ops-log.html">Ops-Log</a>
+    <a href="#tradition">Tradition</a>
+    <a href="#twitch">Twitch</a>
+    <a href="#suite">Suite</a>
+    <a href="#faq">FAQ</a>
+    <a href="https://discord.gg/raumdock" target="_blank" rel="noopener">▶ Discord</a>
+    <a class="ext" href="https://financial.raumdock.org/" target="_blank" rel="noopener">Financial ↗</a>
+  </div>
+</div>
+
+<main id="top">
+
+  <!-- ════════════ HERO ════════════ -->
+  <section class="hero" data-screen-label="Hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-grid" aria-hidden="true"></div>
+    <div class="ctr-wide hero-i">
+      <div class="hero-copy">
+        <div class="hero-eyebrow">
+          <span class="tick"></span>
+          <span class="kick">Deutsche Star Citizen Orga · Est. RDOC</span>
         </div>
-        <div>
-          <div class="cd join">
-            <h3>Beitreten</h3>
-            <p class="lead">Schau auf unserem Discord vorbei und sag einfach Hallo – wir beißen nicht.</p>
-            <div class="lst">
-              <a href="https://discord.gg/raumdock" target="_blank" rel="noopener">
-                <span>Discord beitreten</span><span class="pill">Invite</span>
-              </a>
-              <a href="https://robertsspaceindustries.com/orgs/RDOC" target="_blank" rel="noopener">
-                <span>RSI Orga‑Seite</span><span class="pill">RSI</span>
-              </a>
-            </div>
-          </div>
+        <h1>RAUM<span class="dock">DOCK</span></h1>
+        <p class="role">Crewplay-Orga · <b>Deutschsprachig &amp; einsteigerfreundlich</b></p>
+        <p class="tagline">Eine deutschsprachige Crew, die <b>auftaucht</b> statt nur zu reden. Eigener Operations-Stack, feste Einsatzabende und ein klarer Weg von „Hallo&ldquo; bis zum festen Platz auf der Brücke.</p>
+        <div class="hero-stats">
+          <div class="st"><div class="n">DE·CH</div><div class="l">Community</div></div>
+          <div class="st"><div class="n">18+</div><div class="l">Mindestalter</div></div>
+          <div class="st"><div class="n">VOICE</div><div class="l">First</div></div>
+          <div class="st"><div class="n">o7</div><div class="l">Doktrin</div></div>
+        </div>
+        <div class="cta">
+          <a class="btn btn-pri" href="https://discord.gg/raumdock" target="_blank" rel="noopener"><span class="i">▶</span> Discord beitreten</a>
+          <a class="btn" href="#auswahl">Passt das zu mir?</a>
+          <a class="btn btn-gold" href="ops-log.html"><span class="i">▣</span> Ops-Log</a>
         </div>
       </div>
-    </section>
+      <aside class="opcard" aria-label="RDOC Keyvisual">
+        <div class="pic">
+          <div class="tagrow"><span class="gold">RDOC // 2026</span><span>KEYVISUAL</span></div>
+          <img src="assets/rdoc-2026-helmet-keyvisual.png" alt="RDOC Helm-Keyvisual mit Amber-Visier" />
+        </div>
+        <div class="meta">
+          <span class="nm">Helm an.</span>
+          <span class="rl">// Funk auf</span>
+        </div>
+        <div class="ln">// Eine Crew — nicht jeder in seiner eigenen Instanz.</div>
+      </aside>
+    </div>
+    <div class="scroll-hint"><span class="bar"></span>Scroll // Dossier öffnen</div>
+  </section>
 
-    <section id="wir-sind">
-      <div class="ctr g2">
+  <!-- ════════════ 01 WIR SIND ════════════ -->
+  <section class="sec" id="wir" data-screen-label="Wir sind">
+    <div class="ctr">
+      <div class="sechead">
+        <span class="idx">[ 01 ]</span>
+        <div class="ht">
+          <h2>Keine Briefkasten&shy;orga.<br>Eine <em>Crew.</em></h2>
+          <div class="desc">/ Wer wir sind · Operator Dossier</div>
+        </div>
+      </div>
+      <div class="split">
         <div>
-          <h2>Wir sind</h2>
-          <p>Bei uns fliegen Veteranen neben Piloten, die letzte Woche ihren ersten Quantum‑Sprung gemacht haben – und keiner schaut auf den anderen herab. Wir teilen Wissen, planen Touren und helfen uns gegenseitig aus der Klemme. Vom Mining‑Konvoi über Foto‑Touren bis zum spontanen Bunker‑Run – Hauptsache zusammen.</p>
-          <ul style="list-style:none; padding:0; margin:18px 0 0; line-height:1.9">
-            <li>▸ Deutschsprachig, einsteigerfreundlich</li>
-            <li>▸ Regelmäßige Eventabende – ohne Pflichttermin</li>
-            <li>▸ Erfahrene Piloten, die ihr Wissen teilen</li>
-            <li>▸ Eigene Tools rund um die Orga (z.B. unser Financial Dashboard)</li>
+          <p class="lead">Bei uns fliegen Veteranen neben Piloten, die letzte Woche ihren ersten Quantum-Sprung gemacht haben — und keiner schaut auf den anderen herab.</p>
+          <p class="body-p">Raumdock ist eine deutschsprachige Star-Citizen-Orga mit eigenem Operations- und Fleetplanner-Stack. Wir teilen Wissen, planen Touren und ziehen uns gegenseitig aus der Klemme. Vom Mining-Konvoi über Salvage-Schichten bis zum spontanen Bunker-Run — Hauptsache zusammen, nicht jeder in seiner eigenen Instanz.</p>
+          <ul class="spec">
+            <li><b>Deutschsprachig &amp; einsteigerfreundlich</b> — im Voice wird deutsch gesprochen, ein Starter-Schiff reicht.</li>
+            <li><b>Feste Einsatzabende</b> — regelmäßig, angekündigt im Discord, ohne Pflichttermin.</li>
+            <li><b>Eigener Tool-Stack</b> — Fleetplanner, Mission Voice und ein offenes Financial-Dashboard.</li>
           </ul>
         </div>
-        <div>
-          <div class="cd">
-            <h3>Aufnahme & Regeln</h3>
-            <p class="lead">Respekt im Umgang miteinander, keine Cheats oder Exploits, real life geht immer vor. Mindestalter 18+.</p>
-          </div>
-        </div>
+        <figure class="media">
+          <img src="assets/shots/city-window.jpg" alt="RDOC-Pilot blickt über die Skyline von Area18" />
+          <figcaption class="cap"><span class="ac">RDOC //</span> Standby — Aussicht über das Verse</figcaption>
+        </figure>
       </div>
-    </section>
-
-    <section id="spielen">
-      <div class="ctr">
-        <h2>Was wir spielen</h2>
-        <p>Quer durchs Verse, mit Schwerpunkt auf gemeinsamen Touren statt Solo‑Grind:</p>
-        <div style="display:flex; flex-wrap:wrap; gap:8px; margin-top:18px">
-          <span class="chip">Mining</span>
-          <span class="chip">Salvage</span>
-          <span class="chip">Cargo &amp; Trading</span>
-          <span class="chip">Bunker &amp; FPS</span>
-          <span class="chip">Foto‑Touren</span>
-          <span class="chip">Eventabende</span>
-          <span class="chip">Schiffs‑Refits</span>
-          <span class="chip">Hilfe für Neulinge</span>
-        </div>
-      </div>
-    </section>
-
-    <section id="events">
-      <div class="ctr">
-        <h2>Anstehende Events</h2>
-        <p>Geplante Touren und Aktionen aus unserem Discord. Pflichttermine? Gibt's nicht – sei dabei, wenn du Zeit und Lust hast.</p>
-        <div id="discord-events" class="lst m20"></div>
-      </div>
-    </section>
-
-    <section id="mitmachen">
-      <div class="ctr">
-        <h2>So wirst du Mitglied</h2>
-        <p>Kein Bewerbungsverfahren, keine Probezeit. Drei Schritte – und du fliegst mit.</p>
-        <div class="cds">
-          <div class="cd"><h3>1. Discord</h3><p>Tritt unserem Discord bei und sag in der Vorstellungsrunde kurz Hallo.</p></div>
-          <div class="cd"><h3>2. RSI</h3><p>Bewirb dich auf der RSI‑Seite der Orga Raumdock (RDOC) – wir bestätigen zeitnah.</p></div>
-          <div class="cd"><h3>3. Mitfliegen</h3><p>Klink dich beim nächsten Eventabend ein oder schau einfach im Voice vorbei.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="members">
-      <div class="ctr">
-        <h2>RDOC Members</h2>
-        <p>Die Crew von Raumdock – öffentlich gelistet auf RSI. Die Übersicht wird automatisch vom RSI‑Profil der Orga aktualisiert.</p>
-        <div class="member-grid m20" id="member-featured" aria-live="polite"></div>
-        <div class="member-list m20" id="member-list" aria-live="polite"></div>
-        <p class="member-source" id="member-source">Members werden geladen...</p>
-        </div>
-    </section>
-
-    <section id="links">
-      <div class="ctr">
-        <h2>Links</h2>
-        <p>Unsere Kanäle und ein paar Tools, die uns das Leben im Verse leichter machen.</p>
-        <div class="lst m16">
-          <a href="https://discord.gg/raumdock" target="_blank" rel="noopener"><span>Discord</span><span class="pill">Invite</span></a>
-          <a href="https://robertsspaceindustries.com/orgs/RDOC" target="_blank" rel="noopener"><span>RSI Orga‑Seite</span><span class="pill">RSI</span></a>
-          <a href="https://financial.raumdock.org/" target="_blank" rel="noopener"><span>Financial Dashboard</span><span class="pill">Finanzen</span></a>
-          <a href="https://github.com/cccdemon" target="_blank" rel="noopener"><span>You wish to see more of our tools?</span><span class="pill">GitHub</span></a>
-          <a href="https://robertsspaceindustries.com/spectrum/community/SC" target="_blank" rel="noopener"><span>Spectrum</span><span class="pill">Forum</span></a>
-          <a href="https://uexcorp.space/" target="_blank" rel="noopener"><span>UEX</span><span class="pill">Trading</span></a>
-          <a href="https://ccugame.app/" target="_blank" rel="noopener"><span>CCU Game</span><span class="pill">Tools</span></a>
-          <a href="https://fltyrd.net/fi/dd3b543c/" target="_blank" rel="noopener"><span>FleetYard invite Link</span><span class="pill">Orga Fleet</span></a>
-        </div>
-      </div>
-    </section>
-
-    <section id="tools">
-      <div class="ctr">
-        <h2>Unsere Tools</h2>
-        <p>Was wir selbst gebaut haben – aus der Orga, für die Orga.</p>
-        <div class="cds">
-          <div class="cd join">
-            <h3>💰 Financial Dashboard</h3>
-            <p>Volle Transparenz über die Twitch‑Einnahmen von JustCallMeDeimos – live, öffentlich, mit Aufschlüsselung nach Zeitraum und Spende.</p>
-            <p style="margin-top:12px"><a href="https://financial.raumdock.org/" target="_blank" rel="noopener" style="color:var(--gold)">→ financial.raumdock.org</a></p>
-          </div>
-          <div class="cd">
-            <h3>🛠️ Mehr in Arbeit</h3>
-            <p>Wir basteln laufend an kleinen Helfern für die Crew. Was öffentlich ist, findest du auf unserem GitHub.</p>
-            <p style="margin-top:12px"><a href="https://github.com/cccdemon" target="_blank" rel="noopener" style="color:var(--cyan)">→ github.com/cccdemon</a></p>
-          </div>
-          <div class="cd">
-            <h3>📡 raumdock.org</h3>
-            <p>Diese Seite ist Eigenentwicklung – statisches Setup mit Live‑Anbindung an Twitch, Discord und RSI.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="lrc">
-      <div class="ctr g2">
-        <div>
-          <span class="chip">Cross-Server Discord Bridge · Für die deutschsprachige SC-Community</span>
-          <h2>RDOC Longrange Communicator</h2>
-          <p class="lead">Die deutschsprachige Star‑Citizen‑Szene ist über Dutzende kleiner Discords verteilt. Jeder schreibt in seinem eigenen Channel – und niemand hört den anderen. <strong>Das wollen wir ändern.</strong></p>
-          <p>Der <strong>Raumdock Longrange Communicator</strong> ist unser selbstgebauter Discord‑Bot, der Text‑Channels über beliebig viele Server hinweg spiegelt. Ein gemeinsamer Channel, viele Discords. Mit Name und Avatar des echten Absenders – als säßen alle im selben Raum.</p>
-          <p>Damit bauen wir einen <strong>deutschsprachigen Global Chat</strong> für Star Citizen: ein Ort, an dem deine Orga sichtbar ist, ohne dass deine Mitglieder ihren Discord verlassen müssen.</p>
-          <div class="cds">
-            <div class="cd">
-              <h3>🛰️ Webhook‑Relay</h3>
-              <p>Nachrichten werden per Webhook in jeden verbundenen Channel gespiegelt – mit dem Namen und Avatar des Schreibers. Kein anonymer Bot‑Spam.</p>
-            </div>
-            <div class="cd">
-              <h3>🔑 Einladung per Token</h3>
-              <p>Kein offenes Tor. Jede Orga bekommt einen Einmal‑Token vom Betreiber und tritt mit <code>/bridge join</code> bei. Wer raus will, geht mit <code>/bridge leave</code>.</p>
-            </div>
-            <div class="cd">
-              <h3>📋 Audit & Kontrolle</h3>
-              <p>Jede Orga kann einen Audit‑Channel setzen und sieht dort, wer beitritt, austritt oder entfernt wird. Volle Transparenz, kein blinder Vertrauensvorschuss.</p>
-            </div>
-          </div>
-        </div>
-        <div>
-          <div class="cd join">
-            <h3>Eure Orga mit verbinden?</h3>
-            <p class="lead">Wir verteilen Einladungs‑Token an deutschsprachige Star‑Citizen‑Orgas, die mit uns einen gemeinsamen Channel teilen wollen.</p>
-            <div class="lst">
-              <a href="https://discord.gg/raumdock" target="_blank" rel="noopener">
-                <span>Auf Discord melden</span><span class="pill">Token anfragen</span>
-              </a>
-              <a href="mailto:tower@raumdock.org">
-                <span>tower@raumdock.org</span><span class="pill">E‑Mail</span>
-              </a>
-              <a href="https://github.com/cccdemon" target="_blank" rel="noopener">
-                <span>Quellcode auf GitHub</span><span class="pill">Open Source</span>
-              </a>
-            </div>
-            <p class="muted" style="margin-top:14px">Self‑hosted · Webhook‑basiert · Keine fremden Server, keine Datensilos.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="twitch">
-      <div class="ctr">
-        <h2>Twitch – Raumdock Streamer</h2>
-        <p>Unser Haus‑Streamer <strong>JustCallMeDeimos</strong> nimmt euch live mit ins Verse – und daneben findet ihr weitere Creator, die wir gerne unterstützen.</p>
-        <div class="g2 m20">
-          <div>
-            <iframe src="https://player.twitch.tv/?channel=JustCallMeDeimos&parent=raumdock.org" class="ifr" allowfullscreen></iframe>
-          </div>
-          <div>
-            <div class="cd">
-              <h3>Empfohlene Streamer</h3>
-              <p class="lead">Schaut auch bei unseren Freunden im Verse vorbei:</p>
-              <div class="lst">
-                <a href="https://twitch.tv/SunaDevi" target="_blank" rel="noopener"><span>SunaDevi</span><span class="pill">Twitch</span></a>
-                <a href="https://twitch.tv/Hexenwerk_Gaming" target="_blank" rel="noopener"><span>Hexenwerk_Gaming</span><span class="pill">Twitch</span></a>
-                <a href="https://twitch.tv/jenniferhof_aka_toxona" target="_blank" rel="noopener"><span>jenniferhof_aka_toxona</span><span class="pill">Twitch</span></a>
-                <a href="https://twitch.tv/Casishur" target="_blank" rel="noopener"><span>Casishur</span><span class="pill">Twitch</span></a>
-                <a href="https://twitch.tv/Vi5E" target="_blank" rel="noopener"><span>Vi5E</span><span class="pill">Twitch</span></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="faq">
-      <div class="ctr">
-        <h2>Häufige Fragen</h2>
-        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:10px; margin-top:20px">
-          <div class="cd">
-            <h3>Brauche ich ein bestimmtes Schiff?</h3>
-            <p>Nein. Das Starter‑Schiff reicht völlig. Für größere Touren gibt es bei uns oft Mitfluggelegenheiten.</p>
-          </div>
-          <div class="cd">
-            <h3>Muss ich Englisch sprechen?</h3>
-            <p>Nein. Im Voice sprechen wir deutsch. Englisch hilft im Spiel selbst, ist bei uns aber kein Muss.</p>
-          </div>
-          <div class="cd">
-            <h3>Wie oft wird gespielt?</h3>
-            <p>Regelmäßig, ohne Pflicht. Eventabende werden im Discord angekündigt – sei dabei, wenn du Zeit und Lust hast.</p>
-          </div>
-          <div class="cd">
-            <h3>Gibt es eine Mindestaktivität?</h3>
-            <p>Nein. Real life geht immer vor. Wer eine Weile weg ist, kommt einfach wieder zurück.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="disclaimer">
-      <div class="ctr">
-        <h2>Disclaimer</h2>
-        <p>Raumdock ist eine inoffizielle, von Spielern organisierte Community und steht in keiner offiziellen Verbindung zu Cloud Imperium Games (CIG) oder Roberts Space Industries (RSI). Alle Marken und eingetragenen Warenzeichen sind Eigentum der jeweiligen Inhaber.</p>
-      </div>
-    </section>
-
-    <section id="impressum">
-      <div class="ctr">
-        <h2>Impressum</h2>
-        <div class="g2">
-          <div>
-            <p><strong>Verantwortlich für den Inhalt:</strong><br>
-            <span>JustCallMeDeimos - Torsten Ennenbach</span><br>
-            <span>c/o Online-Impressum.de #4910</span><br>
-            <span>Europaring 90</span><br>
-            <span>53757 Sankt Augustin</span><br>
-            <span>Deutschland</span><br>
-            <span>E‑Mail: tower@raumdock.org</span></p>
-          </div>
-          <div>
-            <div class="cd">
-              <h3>Hinweise zum Impressum</h3>
-              <p class="lead">Diese Seite enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben und für die wir keine Haftung übernehmen. Raumdock ist eine private, nicht‑kommerzielle Online‑Gemeinschaft ohne Gewinnabsicht – wir sind Spieler, die zufällig dasselbe Spiel spielen.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="ftr">
-    <div class="ctr ftr-i">
-      <div>© <span id="year"></span> Raumdock – Star Citizen Orga</div>
-      <div class="muted">Gebaut von Piloten, für Piloten.</div>
     </div>
-  </footer>
+  </section>
 
-  <script src="/assets/main.js?v=20260513-navfix" defer></script>
-  <script src="/assets/members.js?v=20260513-sync" defer></script>
-  <script src="/assets/events.js" defer></script>
-  <script src="/assets/twitch-live.js" defer></script>
+  <!-- ════════════ 02 AUSWAHL ════════════ -->
+  <section class="sec alt" id="auswahl" data-screen-label="Auswahl">
+    <div class="ctr">
+      <div class="sechead">
+        <span class="idx">[ 02 ]</span>
+        <div class="ht">
+          <h2>Für wen wir sind —<br>und für wen <em>nicht.</em></h2>
+          <div class="desc">/ Klartext vor dem Beitritt</div>
+          <p class="sub">„Jeder willkommen&ldquo; steht überall und filtert nichts. Wir sagen lieber vorher, mit wem wir fliegen wollen. Das spart allen Zeit.</p>
+        </div>
+      </div>
+      <div class="sel">
+        <div class="sel-col yes">
+          <h3><span class="s">✓</span> Für dich, wenn …</h3>
+          <span class="ch">// Profil — passt</span>
+          <ul>
+            <li><span class="mk">+</span><span>… du uns <b>wie Menschen behandelst</b> — auf Augenhöhe, ohne Theater.</span></li>
+            <li><span class="mk">+</span><span>… du im <b>Voice auftauchst</b>, nicht nur im Textchat mitliest.</span></li>
+            <li><span class="mk">+</span><span>… du aus einem Verlust <b>dazulernst</b>, statt zu rage-quitten.</span></li>
+            <li><span class="mk">+</span><span>… du lieber <b>zu fünft in einem Schiff</b> sitzt als in fünf Solo-Instanzen.</span></li>
+            <li><span class="mk">+</span><span>… du <b>erwachsen</b> bist und dich auch so verhältst (18+).</span></li>
+            <li><span class="mk">+</span><span>… du eine deutschsprachige <b>Heimatbasis</b> suchst, keine Karteileiche.</span></li>
+            <li><span class="mk">+</span><span>… du <b>Wertschätzung zeigen</b> kannst — ein Danke kostet nichts.</span></li>
+          </ul>
+        </div>
+        <div class="sel-col no">
+          <h3><span class="s">✕</span> Nichts für dich, wenn …</h3>
+          <span class="ch">// Profil — passt nicht</span>
+          <ul>
+            <li><span class="mk">–</span><span>… du <b>Menschen im Internet</b> für zweitklassige Menschen hältst.</span></li>
+            <li><span class="mk">–</span><span>… du nur einen <b>Org-Tag fürs Profil</b> willst und sonst solo bleibst.</span></li>
+            <li><span class="mk">–</span><span>… du <b>Lone-Wolf</b> ohne Interesse an der Crew bist.</span></li>
+            <li><span class="mk">–</span><span>… du <b>Drama, Fraktionsgezänk</b> und Ego-Theater mitbringst.</span></li>
+            <li><span class="mk">–</span><span>… du <b>„carry mich&ldquo;</b> rufst, aber selbst nichts beiträgst.</span></li>
+            <li><span class="mk">–</span><span>… du <b>Cheats, Exploits oder RMT</b> für clever hältst.</span></li>
+            <li><span class="mk">–</span><span>… für dich <b>„nicht motzen&ldquo; schon als Lob</b> durchgeht.</span></li>
+          </ul>
+        </div>
+      </div>
+      <p class="sel-note">Selektiv heißt nicht arrogant. Es heißt: Wir wissen, mit wem wir fliegen wollen — und stehen dazu.</p>
+    </div>
+  </section>
+
+  <!-- ════════════ 03 EINSATZFELDER ════════════ -->
+  <section class="sec" id="einsatz" data-screen-label="Einsatzfelder">
+    <div class="ctr">
+      <div class="sechead">
+        <span class="idx">[ 03 ]</span>
+        <div class="ht">
+          <h2>Was wir <em>fliegen.</em></h2>
+          <div class="desc">/ Einsatzfelder · Aktive Bereiche</div>
+          <p class="sub">Keine starren Pflicht-Rollen. Du suchst dir aus, worauf du Bock hast — und findest immer eine Crew, die mitkommt.</p>
+        </div>
+      </div>
+      <div class="fields">
+        <article class="field">
+          <div class="ph"><span class="tag">// Industrie</span><img src="assets/mission-mining.png" alt="Mining-Operation" loading="lazy" /></div>
+          <div class="bd"><h3>Mining</h3><p>Koordinierte Förder-Konvois — vom Prospektor bis zum Refinery-Run. Geteilte Routen, geteilter Ertrag.</p></div>
+        </article>
+        <article class="field">
+          <div class="ph"><span class="tag">// Salvage</span><img src="assets/mission-salvage.png" alt="Salvage-Operation" loading="lazy" /></div>
+          <div class="bd"><h3>Salvage</h3><p>Wrackfelder zerlegen im Schichtbetrieb. Mehrere Reclaimer, klare Cargo-Rotation, eine Nacht.</p></div>
+        </article>
+        <article class="field">
+          <div class="ph"><span class="tag">// Logistik</span><img src="assets/mission-transport.png" alt="Cargo- und Handelslauf" loading="lazy" /></div>
+          <div class="bd"><h3>Cargo &amp; Handel</h3><p>Frachtläufe durch ruhige und umkämpfte Sektoren. Eskorte inklusive, wenn die Route es verlangt.</p></div>
+        </article>
+        <article class="field">
+          <div class="ph"><span class="tag">// Recon</span><img src="assets/mission-exploration.png" alt="Erkundungsmission" loading="lazy" /></div>
+          <div class="bd"><h3>Erkundung</h3><p>Lange Touren in den Rand des Verse — Foto-Stops, neue Systeme, Datenruns. Für die ruhigen Nächte.</p></div>
+        </article>
+        <article class="field">
+          <div class="ph"><span class="tag">// Security</span><img src="assets/mission-combat.png" alt="Sicherheits- und Eskortmission" loading="lazy" /></div>
+          <div class="bd"><h3>Sicherheit &amp; Eskorte</h3><p>Bunker-Sweeps, Geleitschutz und FPS-Training. Wir schießen nicht zuerst — aber wir kommen vorbereitet.</p></div>
+        </article>
+        <article class="field">
+          <div class="ph"><span class="tag">// Crew</span><img src="assets/mission-social.png" alt="Gemeinsame Crew-Zeit" loading="lazy" /></div>
+          <div class="bd"><h3>Einfach abhängen</h3><p>Lagerfeuer auf einem Mond, Schiffs-Refits, Neulingen helfen. Nicht jeder Abend muss eine Mission sein.</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════ 04 CREW ════════════ -->
+  <section class="sec alt" id="crew" data-screen-label="Crew">
+    <div class="ctr">
+      <div class="sechead">
+        <span class="idx">[ 04 ]</span>
+        <div class="ht">
+          <h2>Die Köpfe hinter <em>Raumdock.</em></h2>
+          <div class="desc">/ Crew · Trusted Operators</div>
+          <p class="sub">Kein anonymes Kollektiv. Echte Leute mit echter Haltung — wenn etwas schiefgeht, weißt du, wer geradesteht.</p>
+        </div>
+      </div>
+      <div class="crew">
+        <article class="op">
+          <div class="pic"><span class="num">01</span><img src="assets/crew/deimos.jpg?v=7" alt="JustCallMeDeimos" loading="lazy" /><div class="id"><div class="nm">Deimos</div><div class="rl">Gründer · Taktikexperte</div></div></div>
+          <p class="q">„Der, der sagt, was Sache ist.&ldquo;</p>
+        </article>
+        <article class="op">
+          <div class="pic"><span class="num">02</span><img src="assets/crew/jericho.jpg?v=6" alt="JerichoRamirez" loading="lazy" /><div class="id"><div class="nm">Jericho</div><div class="rl">Einsatzleitung</div></div></div>
+          <p class="q">„Macht Angebote, die man nicht ablehnen kann.&ldquo;</p>
+        </article>
+        <article class="op">
+          <div class="pic"><span class="num">03</span><img src="assets/crew/holder.jpg?v=6" alt="HolderDiePolder" loading="lazy" /><div class="id"><div class="nm">Holder</div><div class="rl">Schnellfeuerexpertin &amp; Munitionsexpresslieferantin</div></div></div>
+          <p class="q">„Etwas muss weg — sie macht es weg.&ldquo;</p>
+        </article>
+        <article class="op">
+          <div class="pic"><span class="num">04</span><img src="assets/crew/headwig.jpg?v=6" alt="HEADWiG" loading="lazy" /><div class="id"><div class="nm">Headwig</div><div class="rl">Schmerzexperte</div></div></div>
+          <p class="q">„Es soll weh tun — das ist sein Job.&ldquo;</p>
+        </article>
+        <article class="op">
+          <div class="pic"><span class="num">05</span><img src="assets/crew/jazzz.jpg?v=6" alt="jazZz" loading="lazy" /><div class="id"><div class="nm">jazZz</div><div class="rl">Der Bestatter</div></div></div>
+          <p class="q">„Nachhaltige und endgültige Lösungen sind sein Gebiet.&ldquo;</p>
+        </article>
+      </div>
+      <p class="crew-note">Die vollständige Crew ist öffentlich auf RSI gelistet — <a href="https://robertsspaceindustries.com/orgs/RDOC" target="_blank" rel="noopener">robertsspaceindustries.com/orgs/RDOC ↗</a></p>
+    </div>
+  </section>
+
+  <!-- ════════════ 05 EINSTIEG ════════════ -->
+  <section class="sec" id="einstieg" data-screen-label="Einstieg">
+    <div class="ctr">
+      <div class="sechead">
+        <span class="idx">[ 05 ]</span>
+        <div class="ht">
+          <h2>Einfach <em>mitfliegen.</em></h2>
+          <div class="desc">/ Einstieg · Kein Bewerbungsmarathon</div>
+          <p class="sub">Wir haben keinen Aufnahme-Prozess mit Stufen, Probezeit und Punkten. Bei uns spielst du einfach mit — und wenn du dabei sein willst, dann bist du dabei.</p>
+        </div>
+      </div>
+      <div class="rail" style="grid-template-columns:repeat(3,1fr)">
+        <div class="step"><div class="dot">▸</div><h3>Komm rein</h3><p>Discord-Server beitreten, kurz Hallo sagen. Voice ist sofort offen — keine Freischaltung, kein Formular.</p></div>
+        <div class="step"><div class="dot">▸</div><h3>Spiel mit</h3><p>Häng dich beim nächsten Einsatzabend einfach dran. Kein Test, keine Probezeit, kein Bewerbungsgespräch.</p></div>
+        <div class="step"><div class="dot">▸</div><h3>Bleib</h3><p>Wenn du dabei sein willst, bist du dabei. So einfach ist das — den Rest macht die Zeit im Voice.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════ BAND ════════════ -->
+  <section class="band" aria-hidden="false">
+    <div class="band-bg" style="background-image:url('assets/shots/engine-trails-sun.jpg')"></div>
+    <div class="ctr">
+      <blockquote>Nicht reden, <em>sondern machen.</em></blockquote>
+      <div class="src">// RDOC Doktrin</div>
+      <blockquote style="margin-top:48px">Alle für einen — <em>einer für alle!</em></blockquote>
+      <div class="src">// RDOC Musketier-Doktrin</div>
+    </div>
+  </section>
+
+  <!-- ════════════ 06 OPS-LOG ════════════ -->
+  <section class="sec" id="opslog" data-screen-label="Ops-Log">
+    <div class="ctr">
+      <div class="sechead">
+        <span class="idx">[ 06 ]</span>
+        <div class="ht">
+          <h2>Was passiert <em>ist.</em></h2>
+          <div class="desc">/ Ops-Log · After-Action Reports</div>
+          <p class="sub">Ein Kalendereintrag ist nach zwei Tagen tot. Ein gut geschriebener Bericht wirbt noch in zwei Jahren. Hier protokollieren wir, was die Crew tatsächlich geflogen hat.</p>
+        </div>
+      </div>
+      <!-- Live aus dem Fleetmanager (/api/ops-log.php via assets/ops-log.js). Leerer Zustand statt erfundener Berichte. -->
+      <div class="aar" id="aar-featured" data-limit="2">
+        <p class="crew-note">Ops-Log wird geladen…</p>
+      </div>
+      <div class="cta" style="margin-top:24px"><a class="btn btn-gold" href="ops-log.html"><span class="i">▣</span> Vollständiges Ops-Log</a></div>
+    </div>
+  </section>
+
+  <!-- ════════════ 07 TRADITION ════════════ -->
+  <section class="sec alt" id="tradition" data-screen-label="Tradition">
+    <div class="ctr">
+      <div class="sechead">
+        <span class="idx">[ 07 ]</span>
+        <div class="ht">
+          <h2>Unsere <em>Tradition.</em></h2>
+          <div class="desc">/ Tradition · Was wiederkehrt, wird zur Marke</div>
+          <p class="sub">Man trifft uns nicht nur im Verse. Einmal im Jahr sitzen wir an einer echten Bar — in Deutschland und in der Schweiz. Dazwischen läuft der Betrieb.</p>
+        </div>
+      </div>
+      <div class="trad">
+        <article class="t"><div class="bg" style="background-image:url('assets/shots/nebula-station.jpg')"></div><span class="badge">Jährlich · IRL</span><div class="tt">// Signature Event</div><h3>Bar Citizen DE &amp; CH</h3><p>Einmal im Jahr kein Verse, sondern Bar. Echte Gesichter, echtes Bier, dieselbe Crew.</p></article>
+        <article class="t"><div class="bg" style="background-image:url('assets/shots/fleet-camo-escort.jpg')"></div><span class="badge">Regelmäßig</span><div class="tt">// Ingame</div><h3>Einsatzabende</h3><p>Konvois, Bunker, Salvage-Schichten und Foto-Touren. Angekündigt im Discord, gemeinsam geflogen.</p></article>
+        <article class="t"><div class="bg" style="background-image:url('assets/shots/perseus-station.jpg')"></div><span class="badge">Live</span><div class="tt">// Twitch</div><h3>Stream-Abende</h3><p>JustCallMeDeimos nimmt die Org live mit ins Verse — Abende, an denen die Community mitfliegt.</p></article>
+      </div>
+
+      <h3 class="label" style="margin:38px 0 14px;color:var(--accent)">// Nächste Operationen</h3>
+      <!-- Live aus dem Fleetplanner (/api/suite-events.php via assets/suite-events.js). -->
+      <div class="events" id="suite-events">
+        <p class="crew-note">Fleetplanner-Events werden geladen…</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════ 08 TWITCH ════════════ -->
+  <section class="sec" id="twitch" data-screen-label="Twitch">
+    <div class="ctr">
+      <div class="sechead">
+        <span class="idx">[ 08 ]</span>
+        <div class="ht">
+          <h2>Raumdock <em>live.</em></h2>
+          <div class="desc">/ Twitch · Open Frequency</div>
+          <p class="sub">Haus-Streamer <b>JustCallMeDeimos</b> nimmt euch live mit ins Verse — und mit ihm ein paar befreundete Creator aus dem <a href="https://www.twitch.tv/team/verse" target="_blank" rel="noopener" style="color:var(--accent)">Twitch-Team VERSE</a>.</p>
+        </div>
+      </div>
+      <div class="tw">
+        <div class="frame">
+          <iframe src="https://player.twitch.tv/?channel=JustCallMeDeimos&parent=raumdock.org&parent=localhost" title="JustCallMeDeimos live auf Twitch" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="list">
+          <a href="https://www.twitch.tv/team/verse" target="_blank" rel="noopener"><span>Twitch-Team VERSE</span><span class="pill">Team ↗</span></a>
+          <a href="https://twitch.tv/JustCallMeDeimos" target="_blank" rel="noopener"><span>JustCallMeDeimos</span><span class="pill">Twitch</span></a>
+          <a href="https://twitch.tv/jerichoramirez" target="_blank" rel="noopener"><span>jerichoramirez</span><span class="pill">Twitch</span></a>
+          <a href="https://twitch.tv/x_jazzz_x" target="_blank" rel="noopener"><span>x_jazzz_x</span><span class="pill">Twitch</span></a>
+          <a href="https://twitch.tv/smorxel" target="_blank" rel="noopener"><span>smorxel</span><span class="pill">Twitch</span></a>
+          <a href="https://twitch.tv/stormp00per89" target="_blank" rel="noopener"><span>stormp00per89</span><span class="pill">Twitch</span></a>
+          <a href="https://twitch.tv/faenger" target="_blank" rel="noopener"><span>faenger</span><span class="pill">Twitch</span></a>
+          <a href="https://twitch.tv/SunaDevi" target="_blank" rel="noopener"><span>SunaDevi</span><span class="pill">Twitch</span></a>
+          <a href="https://twitch.tv/Hexenwerk_Gaming" target="_blank" rel="noopener"><span>Hexenwerk_Gaming</span><span class="pill">Twitch</span></a>
+          <a href="https://twitch.tv/Casishur" target="_blank" rel="noopener"><span>Casishur</span><span class="pill">Twitch</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════ 09 SUITE ════════════ -->
+  <section class="sec alt" id="suite" data-screen-label="Suite">
+    <div class="ctr">
+      <div class="sechead">
+        <span class="idx">[ 09 ]</span>
+        <div class="ht">
+          <h2>Die <em>RDOC-Suite.</em></h2>
+          <div class="desc">/ Werkzeug · Aus dem Orga-Alltag gebaut</div>
+          <p class="sub">Unser Werkzeugkasten für organisierte Star-Citizen-Abende: Missionen planen, Crews koordinieren, Funkwege sauber halten, Discords verbinden.</p>
+        </div>
+      </div>
+      <div class="faq">
+        <div class="card"><h3>Fleetplanner</h3><p>Missionen, Rollen, Teilnehmer und Vorbereitung an einem Ort — statt alles im Chat zu verlieren.</p></div>
+        <div class="card"><h3>SquadLink</h3><p>Finde Anschluss: offene Squads sehen, beitreten oder selbst eins aufmachen — der schnelle Weg in den nächsten Einsatz.</p></div>
+        <div class="card"><h3>RDOC-LRC</h3><p>Long Range Communicator: verbindet Textkanäle über mehrere Discord-Server in Echtzeit — mit Name und Avatar des echten Absenders. Beitritt nur per Einmal-Token vom Operator.</p></div>
+        <div class="card"><h3>Financial</h3><p>Offenes Dashboard: Wo das Geld der Org herkommt und hingeht. Transparenz statt Blackbox.</p></div>
+      </div>
+      <div class="cta" style="margin-top:24px">
+        <a class="btn" href="https://suite.raumdock.org/fleetplanner" target="_blank" rel="noopener">Suite öffnen ↗</a>
+        <a class="btn btn-gold" href="https://discord.gg/raumdock" target="_blank" rel="noopener">Zugang anfragen</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════ 10 FAQ ════════════ -->
+  <section class="sec" id="faq" data-screen-label="FAQ">
+    <div class="ctr">
+      <div class="sechead">
+        <span class="idx">[ 10 ]</span>
+        <div class="ht">
+          <h2>Häufige <em>Fragen.</em></h2>
+          <div class="desc">/ FAQ · Bevor du fragst</div>
+        </div>
+      </div>
+      <div class="faq">
+        <div class="card"><h3>Brauche ich ein bestimmtes Schiff?</h3><p>Nein. Das Starter-Schiff reicht völlig. Für größere Touren gibt es bei uns oft Mitfluggelegenheiten.</p></div>
+        <div class="card"><h3>Muss ich Englisch sprechen?</h3><p>Nein. Im Voice sprechen wir deutsch. Englisch hilft im Spiel, ist bei uns aber kein Muss.</p></div>
+        <div class="card"><h3>Gibt es eine Mindestaktivität?</h3><p>Nein. Real Life geht immer vor. Wer eine Weile weg ist, kommt einfach wieder zurück.</p></div>
+        <div class="card"><h3>Wie werde ich Mitglied?</h3><p>Discord rein, Hallo sagen, mitfliegen. Den genauen Weg zeigt dir der Einstieg weiter oben.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════ IMPRESSUM ════════════ -->
+  <section class="sec alt" id="impressum" data-screen-label="Impressum">
+    <div class="ctr">
+      <div class="imp">
+        <div>
+          <span class="kick">/ Pflichtangaben</span>
+          <h2>Impressum</h2>
+          <p><strong>Verantwortlich für den Inhalt:</strong><br>JustCallMeDeimos — Torsten Ennenbach<br>c/o Online-Impressum.de #4910<br>Europaring 90 · 53757 Sankt Augustin · Deutschland<br>E-Mail: tower@raumdock.org</p>
+          <p style="margin-top:14px"><a href="datenschutz.html" style="color:var(--accent)">Datenschutzerklärung ↗</a></p>
+        </div>
+        <div class="card gold">
+          <h3>Disclaimer</h3>
+          <p>Raumdock ist eine inoffizielle, von Spielern organisierte Community ohne Verbindung zu Cloud Imperium Games (CIG) oder Roberts Space Industries (RSI). Alle Marken sind Eigentum der jeweiligen Inhaber. Private, nicht-kommerzielle Gemeinschaft ohne Gewinnabsicht.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="ftr">
+  <div class="ctr-wide ftr-i">
+    <span class="brandf"><img src="assets/wolf.png" alt="" /> © <span id="year">2026</span> Raumdock — Star Citizen Orga</span>
+    <span>Gebaut von Piloten, für Piloten.</span>
+    <span class="o7">RAUMDOCK // o7</span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // mobile drawer
+  (function () {
+    var b = document.getElementById('burger'), d = document.getElementById('drawer'), x = document.getElementById('drawerX');
+    function open(){ d.classList.add('open'); document.body.classList.add('no-scroll'); b.setAttribute('aria-expanded','true'); }
+    function close(){ d.classList.remove('open'); document.body.classList.remove('no-scroll'); b.setAttribute('aria-expanded','false'); }
+    b.addEventListener('click', open); x.addEventListener('click', close);
+    d.addEventListener('click', function(e){ if(e.target === d) close(); });
+    d.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', close); });
+  })();
+
+  // scrollspy
+  (function () {
+    var links = Array.prototype.slice.call(document.querySelectorAll('.nav-links a[href^="#"]'));
+    var map = {};
+    links.forEach(function(a){ var id=a.getAttribute('href').slice(1); var el=document.getElementById(id); if(el) map[id]=a; });
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ links.forEach(function(a){a.classList.remove('active');}); var a=map[en.target.id]; if(a) a.classList.add('active'); }
+      });
+    }, { rootMargin:'-45% 0px -50% 0px', threshold:0 });
+    Object.keys(map).forEach(function(id){ obs.observe(document.getElementById(id)); });
+  })();
+</script>
+<script defer src="assets/ops-log.js?v=20260617-redesign"></script>
+<script defer src="assets/suite-events.js?v=20260617-redesign"></script>
 </body>
 </html>

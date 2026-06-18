@@ -21,10 +21,15 @@
     a{color:var(--gold)}
     .card{position:relative;background:var(--bg2); border:1px solid var(--bd); border-left:2px solid var(--cyan); padding:18px}
     .card::before{content:"";position:absolute;top:0;right:0;width:12px;height:12px;border-top:1px solid rgba(0,212,255,.45);border-right:1px solid rgba(0,212,255,.45)}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:var(--font-tech);font-size:11px;letter-spacing:2.4px;text-transform:uppercase;color:var(--cyan);margin-bottom:2px}
+    .eyebrow::before{content:"";width:22px;height:1px;background:var(--cyan);opacity:.8}
+    .back{display:inline-flex;align-items:center;gap:8px;margin-top:28px;padding:11px 16px;text-decoration:none;color:var(--gold);border:1px solid rgba(240,165,0,.4);background:rgba(240,165,0,.06);font-family:var(--font-tech);font-size:11px;letter-spacing:1.4px;text-transform:uppercase}
+    .back:hover{background:rgba(240,165,0,.12)}
   </style>
 </head>
 <body>
   <main class="container">
+    <span class="eyebrow">Pflichtangaben · Raumdock</span>
     <h1>Datenschutz</h1>
     <p>Wir verarbeiten auf dieser Website so wenige personenbezogene Daten wie möglich. Es kommen keine Tracking‑Skripte, keine externen Schriftarten und keine Cookies zum Einsatz.</p>
     <div class="card">
@@ -44,7 +49,7 @@
       <li>Widerspruch soweit rechtlich zulässig</li>
     </ul>
     <p style="opacity:.8; margin-top:28px">Stand: <script>document.write(new Date().toLocaleDateString('de-DE'))</script></p>
-    <p><a href="/">Zurück zur Startseite</a></p>
+    <a class="back" href="/">← Zurück zum Raumdock</a>
   </main>
 </body>
 </html>

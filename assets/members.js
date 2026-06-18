@@ -85,6 +85,9 @@ function renderMembers(payload, isFallback = false) {
   featuredWrap.innerHTML = featured.map(item => renderFeaturedMember(item.member, item.image)).join('');
   listWrap.innerHTML = regular.map(renderMemberRow).join('');
 
+  const statCount = document.getElementById('stat-members');
+  if (statCount) statCount.textContent = members.length;
+
   if (source) {
     const updated = payload.updated_at ? new Date(payload.updated_at) : null;
     const stamp = updated && !Number.isNaN(updated.getTime())

@@ -58,11 +58,23 @@ Images are expected at `ghcr.io/<org>/rdoc-{web,assets,api}:<tag>`. The user run
 
 ## Frontend conventions
 
-- **Cache-busting is manual.** [index.html](index.html) loads assets with `?v=YYYYMMDD-tag` query strings (e.g. `styles.css?v=20260513-rsi-members`). The assets container sets `Cache-Control: public, max-age=31536000, immutable` — so when you change a CSS/JS file in `assets/`, bump the `?v=...` string in `index.html` or the change won't reach users.
+- **Cache-busting is manual.** [index.html](index.html) loads assets with `?v=YYYYMMDD-tag` query strings (current tag `?v=20260609-quotes`). The assets container sets `Cache-Control: public, max-age=31536000, immutable` — so when you change a CSS/JS file in `assets/`, bump the `?v=...` string in **both** `index.html` and `ops-log.html` or the change won't reach users.
 - **HTML is never long-cached** (`Cache-Control: no-cache, must-revalidate`) — small files, must propagate immediately.
 - The Twitch embed in [index.html](index.html) hardcodes `parent=raumdock.org`. Local testing won't show the player unless you also pass `parent=localhost`.
-- Navigation lives in two places: desktop `.mn` block and the mobile drawer `#drw .mn-m`. Keep them in sync.
+- Navigation lives in three places now: desktop `.mn` and the mobile drawer `#drw .pnl` in `index.html`, plus the `.mn` in `ops-log.html`. Keep them in sync.
+- Section numbers (`.sec-num` 01–14) are decorative/manual. Inserting a section means renumbering the ones after it.
 - All JS files are vanilla, plain `<script defer>`. No bundler, no transpilation.
+- **Style discipline:** the look follows `RDOC-Assets/STYLE.md` — it must **not** read like a generic AI poster. Avoid fake microtext, neon-HUD frames, marketing orbs / gradient deco, perfect symmetry. Cards are for real content only. Reuse the `streamer-card` chrome (thin cyan borders, gold corner ticks, mono labels).
+- **No invented facts.** Don't add placeholder crew quotes, fabricated AARs/stats, or fake numbers. Live data comes from the PHP API; show an honest empty state when a feed is empty.
+
+## Overhaul-layer features (2026-06, in `assets/main.js`)
+
+- **OPS-STATUS bar** (`#ops-bar` inside the header): live Twitch state, next-op countdown (`/api/discord-events.php`), live RSI fleet count (`/api/rsi-members.php`).
+- **Command palette** (`Ctrl/⌘-K` or `/`) — section/external jump menu (`#cmdk`).
+- **Accent toggle** (cyan ↔ gold) writes `[data-accent]` on `<html>`, persisted in `localStorage` (`rdoc-accent`).
+- Scroll-progress, scroll-reveal and hero parallax, all gated by `prefers-reduced-motion`.
+- **Ops-Log / AARs** come from `/api/ops-log.php` (Fleetmanager `?past=1`, completed/cancelled), rendered by `assets/ops-log.js` into `#reports` (full) and the index `#aar-featured` teaser. Override source via `RDOC_OPSLOG_URL`.
+- **Brand-Kit** downloads point at real existing `/assets/*.png` files (wallpaper, banner, overlay, helm avatar) so nothing 404s. Swap to dedicated kit files when they exist.
 
 ## PHP API endpoints
 
